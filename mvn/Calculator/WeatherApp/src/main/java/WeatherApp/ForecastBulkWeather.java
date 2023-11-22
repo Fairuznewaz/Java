@@ -11,7 +11,7 @@ public class ForecastBulkWeather {
 
         public static void main(String[] args) {
             // Replace with your API key
-            String apiKey = "e1216b72c17c498487b2bef92199fb2a";
+            String apiKey = "821ca3c86499c3cc4560a2292948bb5a";
 
             // Setting Base URI
             RestAssured.baseURI = "http://api.openweathermap.org/data/2.5";
