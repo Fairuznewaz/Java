@@ -1,0 +1,33 @@
+package TollBooth;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+
+
+
+public class PasswordReset {
+
+    public static void main(String[]args) {
+        GetToken token = new GetToken();
+        String accessToken = token.getToken();
+        String bearerToken = "Bearer " + accessToken;
+
+
+        RestAssured.baseURI = "https://jnswdazms1.execute-api.us-east-1.amazonaws.com/dev/cognito-admin-set-user-password";
+        String bodyToResetPassword = "{\"username\":\"Fairuz\",\"password\":\"Fairuz@1234\"}";
+
+
+
+        Response response = given()
+                .header("Authorization", bearerToken)
+                .body(bodyToResetPassword)
+                .when()
+                .post();
+
+        System.out.println(response.prettyPrint());
+        System.out.print(response.getStatusCode());
+    }
+
+}
