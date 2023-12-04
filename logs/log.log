@@ -1,0 +1,18 @@
+2023-12-04 15:13:56 INFO  URL:19 - URI End Point : https://jnswdazms1.execute-api.us-east-1.amazonaws.com/dev/cognito-login
+2023-12-04 15:13:56 INFO  Base:114 - Inside PayloadConverter function
+2023-12-04 15:13:57 INFO  Base:134 - Inside POSTRequest call
+2023-12-04 15:13:58 INFO  TestUtils:38 - Getting Response Code
+2023-12-04 15:13:58 INFO  TestUtils:40 - Status Code: 200
+2023-12-04 15:13:58 INFO  TestUtils:25 - Status Code is returned as expected.
+2023-12-04 15:13:58 INFO  TestUtils:64 - Getting Response Message
+2023-12-04 15:13:58 INFO  TestUtils:66 - Response Message for message: Incorrect username or password.
+2023-12-04 15:13:58 INFO  TestUtils:34 - Both texts are same
+2023-12-04 15:13:59 INFO  URL:19 - URI End Point : https://jnswdazms1.execute-api.us-east-1.amazonaws.com/dev/cognito-login
+2023-12-04 15:13:59 INFO  Base:114 - Inside PayloadConverter function
+2023-12-04 15:13:59 INFO  Base:134 - Inside POSTRequest call
+2023-12-04 15:14:00 INFO  TestUtils:38 - Getting Response Code
+2023-12-04 15:14:00 INFO  TestUtils:40 - Status Code: 200
+2023-12-04 15:14:00 INFO  TestUtils:25 - Status Code is returned as expected.
+2023-12-04 15:14:00 INFO  TestUtils:64 - Getting Response Message
+2023-12-04 15:14:00 INFO  TestUtils:66 - Response Message for message: Log in successfully!
+2023-12-04 15:14:00 INFO  TestUtils:34 - Both texts are same
