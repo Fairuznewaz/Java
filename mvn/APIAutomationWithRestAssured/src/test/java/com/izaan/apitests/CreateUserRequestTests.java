@@ -5,7 +5,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.izaan.api.CreateUserRequest;
 import io.restassured.response.Response;
-import junit.framework.TestCase;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,55 +14,46 @@ import utility.ReportManager;
 public class CreateUserRequestTests {
 
     private static ExtentReports extent;
-    private static ExtentTest testlog;
+    private static ExtentTest testLog;
 
+    /*Test scenarios
+     *
+     *1. Postive Test - valid username and valid email
+     *2. Negative Test - existing username and email
+     * */
 
-
-    /*Test Scenarios
-*
-*  @BeforeMethod
-    public void beforeTests() {
+    @BeforeMethod
+    public void beforeTests(){
         extent = ReportManager.getInstance();
-        testlog = extent.createTests("Validate User Creation Test");
+        testLog = extent.createTest("Validate User Creation Test");
     }
 
     @AfterMethod
-    public void afterTests() {
+    public void afterTests(){
         extent.flush();
-*
- */
+    }
 
+    @Test (priority = 1)
     public void validateUserCreation(){
-
-        extent = ReportManager.getInstance();
-        testlog = extent.createTest("Validate User Creation Test");
 
         Response response = CreateUserRequest.createUserAPI();
 
-        BaseAssertion.verifyStatusCode(response,200);
+        BaseAssertion.verifyStatusCode(response, 200);
 
         BaseAssertion.verifySpecificMessage(response, "message", "User Created successfully!");
 
-        extent.flush();
-        
     }
 
-
-
+    @Test(priority = 2)
     public void validateUserCreationWithExistingUsername(){
 
-        extent = ReportManager.getInstance();
-        testlog = extent.createTest("Validate User Creation Test");
+        Response response = CreateUserRequest.createUserAPINegativeTesting();
 
-        Response response = CreateUserRequest.createUserAPI();
+        BaseAssertion.verifyStatusCode(response, 200);
 
-        BaseAssertion.verifyStatusCode(response,200);
-
-        BaseAssertion.verifySpecificMessage(response, "statusCode", "400" );
+        BaseAssertion.verifySpecificMessage(response, "statusCode", "400");
 
         BaseAssertion.verifySpecificMessage(response, "message", "User account already exists");
-
-        extent.flush();
 
     }
 

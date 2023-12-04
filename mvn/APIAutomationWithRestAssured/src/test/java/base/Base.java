@@ -11,7 +11,6 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.testng.annotations.Test;
 import utility.TestUtils;
 import utility.URL;
 
@@ -144,10 +143,10 @@ public class Base {
      * Methods to make http call
      */
 
-    public static Response GETRequest(String uRI) {
+    public static Response GETRequest(String uRI, String bearerToken) {
 
         log.info("Inside GETRequest call");
-        RequestSpecification requestSpecification = RestAssured.given();
+        RequestSpecification requestSpecification = RestAssured.given().header("Authorization",bearerToken);
         requestSpecification.contentType(ContentType.JSON);
         Response response = requestSpecification.get(uRI);
         log.debug(requestSpecification.log().all());
