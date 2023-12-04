@@ -1,6 +1,6 @@
 package TollBooth;
 
-package com.atifa.TollManagement;
+
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
