@@ -100,7 +100,7 @@
                     <version>2.22.2</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>resources/API_Automation_Tests_Runner.xml</suiteXmlFile>
+                            <suiteXmlFile>src/resources/API_Automation_Tests_Runner.xml</suiteXmlFile>
                         </suiteXmlFiles>
                         <includes>
                             <include>**/runner.AllApiTest.class</include>
